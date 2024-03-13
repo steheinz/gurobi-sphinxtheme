@@ -1,0 +1,21 @@
+# Sphinx builds
+build/
+
+# Vim swapfiles
+*.swp
+
+# Latex intermediates
+*.aux
+*.dvi
+*.log
+*.out
+
+# Python cache files
+__pycache__
+*.pyc
+
+# Translation build files
+*.mo
+
+# Result of sedding too much
+*.bak
