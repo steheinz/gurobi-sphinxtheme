@@ -1,2 +1,0 @@
-[project.entry-points."sphinx.html_themes"]
-name_of_theme = "gurobi-sphinxtheme"
