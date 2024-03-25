@@ -1,5 +1,3 @@
-from os import path
-
 __all__ = [
     "html_theme",
     "html_theme_options",
@@ -34,6 +32,3 @@ html_theme_options = {
 html_favicon = "https://www.gurobi.com/favicon.ico"
 
 html_css_files = ['custom.css']
-
-def setup(app):
-    app.add_html_theme("gurobi_sphinxtheme", path.abspath(path.dirname(__file__)))

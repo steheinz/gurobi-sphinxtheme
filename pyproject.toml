@@ -1,8 +1,19 @@
+[build-system]
+requires = ["setuptools ~= 69.2"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "gurobi_sphinxtheme"
 version = "1.0.0"
 description = "Gurobi Sphinx theme"
 readme = "README.md"
+dependencies = ["furo == 2023.9.10"]
 
 [project.entry-points."sphinx.html_themes"]
 gurobi_sphinxtheme = "gurobi_sphinxtheme"
+
+[tool.setuptools]
+packages = ["gurobi_sphinxtheme"]
+
+[tool.setuptools.package-data]
+gurobi_sphinxtheme = ["theme/theme.conf", "theme/static/*"]
