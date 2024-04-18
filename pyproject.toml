@@ -16,4 +16,9 @@ gurobi_sphinxtheme = "gurobi_sphinxtheme"
 packages = ["gurobi_sphinxtheme"]
 
 [tool.setuptools.package-data]
-gurobi_sphinxtheme = ["theme/theme.conf", "theme/static/*"]
+gurobi_sphinxtheme = [
+    "theme/theme.conf",
+    "theme/*.html",
+    "theme/static/*.svg",
+    "theme/static/*.css",
+]
