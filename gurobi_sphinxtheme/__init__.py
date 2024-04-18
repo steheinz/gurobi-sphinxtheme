@@ -23,7 +23,11 @@ def setup_context(app, pagename, templatename, context, doctree):
             stem, mid, _ = context["gurobi_rtd_canonical_url"].rpartition(
                 context["gurobi_rtd_version"]
             )
-            assert mid and stem.endswith("/")
+            if not (mid and stem.endswith("/")):
+                raise ValueError("Unexpected value: url={} version={}".format(
+                    context["gurobi_rtd_canonical_url"],
+                    context["gurobi_rtd_version"],
+                ))
             context["gurobi_rtd_stable_url"] = stem + "stable/"
 
         # URL for the issues page of the source repo.
