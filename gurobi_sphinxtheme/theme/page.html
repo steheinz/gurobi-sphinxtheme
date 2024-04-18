@@ -16,15 +16,17 @@ for the official documentation of Gurobi.</p>
   {% if gurobi_rtd_version == "latest" %}
     <div class="admonition warning">
         <p class="admonition-title">Warning</p>
-        <p>This is the development version. Please see the
-            <a class="reference external" href="{{ gurobi_rtd_stable_url }}{{ pagename }}.html">stable version</a>.
+        <p>This document is for the development version of Gurobi. Please see the
+        <a class="reference external" href="{{ gurobi_rtd_stable_url }}{{ pagename }}.html">stable version</a>
+        for the public documentation.
         </p>
     </div>
   {% elif not (gurobi_rtd_version == "stable" or gurobi_rtd_version == "11.0") %}
     <div class="admonition warning">
         <p class="admonition-title">Warning</p>
-        <p>This is an old version. Please see the
-            <a class="reference external" href="{{ gurobi_rtd_stable_url }}{{ pagename }}.html">stable version</a>.
+        <p>You are not reading the most up to date version of this documentation. Please see the
+        <a class="reference external" href="{{ gurobi_rtd_stable_url }}{{ pagename }}.html">stable version</a>
+        for documentation of the latest Gurobi release.
         </p>
     </div>
   {% endif %}
