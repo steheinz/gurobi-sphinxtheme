@@ -14,10 +14,14 @@ official documentation of Gurobi.</p>
 <p><b>Sphinx variables</b></p>
 <p>pagename = {{ pagename }}</p>
 
-{% if READTHEDOCS %}
+{% if gurobi_rtd %}
 <p><b>Readthedocs variables</b></p>
 <p><b>This is a readthedocs build</b></p>
-<p>READTHEDOCS_PROJECT = {{ READTHEDOCS_PROJECT }}</p>
+<p>gurobi_rtd_project = {{ gurobi_rtd_project }}</p>
+<p>gurobi_rtd_version = {{ gurobi_rtd_version }}</p>
+<p>gurobi_rtd_version_name = {{ gurobi_rtd_version_name }}</p>
+<p>gurobi_rtd_version_type = {{ gurobi_rtd_version_type }}</p>
+<p>gurobi_rtd_canonical_url = {{ gurobi_rtd_canonical_url }}</p>
 {% else %}
 <p><b>This is not a readthedocs build</b></p>
 {% endif %}
