@@ -7,8 +7,8 @@
 <p class="admonition-title">Warning</p>
 <p>This documentation site is still under construction. It may contain errors
 and omissions. Please visit
-<a class="reference external" href="https://www.gurobi.com/documentation">gurobi.com/documentation</a> for the
-official documentation of Gurobi.</p>
+<a class="reference external" href="https://www.gurobi.com/documentation">gurobi.com/documentation</a>
+for the official documentation of Gurobi.</p>
 </div>
 
 <!-- Outdated or development warnings, based on RTD deployment -->
@@ -16,12 +16,17 @@ official documentation of Gurobi.</p>
   {% if gurobi_rtd_version == "latest" %}
     <div class="admonition warning">
     <p class="admonition-title">Warning</p>
-    <p>This is the development version. Try {{ gurobi_rtd_stable_url }}{{ pagename }}.html</p>
+    <p>This is the development version. Please see the
+    <a class="reference external" href="{{ gurobi_rtd_stable_url }}{{ pagename }}.html">stable version</a>.
+    </p>
     </div>
   {% elif not (gurobi_rtd_version == "stable" or gurobi_rtd_version == "11.0") %}
   <div class="admonition warning">
     <p class="admonition-title">Warning</p>
     <p>This is an old version. Try {{ gurobi_rtd_stable_url }}{{ pagename }}.html </p>
+    <p>This is an old version. Please see the
+    <a class="reference external" href="{{ gurobi_rtd_stable_url }}{{ pagename }}.html">stable version</a>.
+    </p>
     </div>
   {% endif %}
 {% endif %}
