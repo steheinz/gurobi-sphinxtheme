@@ -1,0 +1,25 @@
+{% extends "pagebase.html" %}
+
+{% block content %}
+
+<!-- Under-construction header. -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This documentation site is still under construction. It may contain errors
+and omissions. Please visit
+<a class="reference external" href="https://www.gurobi.com/documentation">gurobi.com/documentation</a> for the
+official documentation of Gurobi.</p>
+</div>
+
+<p>pagename = {{ pagename }}</p>
+<p>readthedocs.v1.project.canonical_url = {{ readthedocs.v1.project.canonical_url }}</p>
+<p>readthedocs.v1.version.id = {{ readthedocs.v1.version.id }}</p>
+<p>readthedocs.v1.version.slug = {{ readthedocs.v1.version.slug }}</p>
+<p>readthedocs.v1.version.verbose_name = {{ readthedocs.v1.version.verbose_name }}</p>
+<p>readthedocs.v1.version.identifier = {{ readthedocs.v1.version.identifier }}</p>
+<p>readthedocs.v1.version.type = {{ readthedocs.v1.version.type }}</p>
+
+<!-- Write the page content -->
+{{ super() }}
+
+{% endblock %}
