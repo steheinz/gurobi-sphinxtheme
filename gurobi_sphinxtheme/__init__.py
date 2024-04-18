@@ -37,6 +37,25 @@ def setup_context(app, pagename, templatename, context, doctree):
         )
 
 
+def update_config(app):
+    # Set options for furo, without theme users having to do it themselves.
+    # See https://chrisholdgraf.com/blog/2022/sphinx-update-config/
+    app.builder.theme_options = {
+        "light_css_variables": {
+            "color-brand-primary": "#DD2113",
+            "color-brand-content": "#1675a9",
+        },
+        "dark_css_variables": {
+            "color-brand-primary": "#DD2113",
+            "color-brand-content": "#1675a9",
+        },
+        "sidebar_hide_name": True,
+        "light_logo": "gurobi_light.svg",
+        "dark_logo": "gurobi_dark.svg",
+    }
+
+
 def setup(app):
     app.add_html_theme("gurobi_sphinxtheme", here / "theme")
     app.connect("html-page-context", setup_context)
+    app.connect("builder-inited", update_config)
