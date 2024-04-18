@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<!-- Under-construction header. -->
+<!-- Under-construction header (to be removed in future) -->
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This documentation site is still under construction. It may contain errors
@@ -11,19 +11,19 @@ and omissions. Please visit
 official documentation of Gurobi.</p>
 </div>
 
-<p><b>Sphinx variables</b></p>
-<p>pagename = {{ pagename }}</p>
-
-{% if gurobi_rtd %}
-<p><b>Readthedocs variables</b></p>
-<p><b>This is a readthedocs build</b></p>
-<p>gurobi_rtd_project = {{ gurobi_rtd_project }}</p>
-<p>gurobi_rtd_version = {{ gurobi_rtd_version }}</p>
-<p>gurobi_rtd_version_name = {{ gurobi_rtd_version_name }}</p>
-<p>gurobi_rtd_version_type = {{ gurobi_rtd_version_type }}</p>
-<p>gurobi_rtd_canonical_url = {{ gurobi_rtd_canonical_url }}</p>
-{% else %}
-<p><b>This is not a readthedocs build</b></p>
+<!-- Outdated or development warnings, based on RTD deployment -->
+{% if gurobi_rtd == "true" and gurobi_rtd_version_type == "branch" %}
+  {% if gurobi_rtd_version == "latest" %}
+    <div class="admonition warning">
+    <p class="admonition-title">Warning</p>
+    <p>This is the development version. Try {{ gurobi_rtd_stable_url }}{{ pagename }}.html</p>
+    </div>
+  {% elif not (gurobi_rtd_version == "stable" or gurobi_rtd_version == "11.0") %}
+  <div class="admonition warning">
+    <p class="admonition-title">Warning</p>
+    <p>This is an old version. Try {{ gurobi_rtd_stable_url }}{{ pagename }}.html </p>
+    </div>
+  {% endif %}
 {% endif %}
 
 <!-- Write the page content -->
