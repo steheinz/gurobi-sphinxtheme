@@ -2,6 +2,9 @@ import os
 import pathlib
 import re
 
+from sphinx.util import logging
+
+logger = logging.getLogger(__name__)
 here = pathlib.Path(__file__).parent
 
 
@@ -68,12 +71,17 @@ def setup_context(app, pagename, templatename, context, doctree):
             stem, mid, _ = context["gurobi_rtd_canonical_url"].rpartition(
                 context["gurobi_rtd_version"]
             )
-            if not (mid and stem.endswith("/")):
-                raise ValueError("Unexpected value: url={} version={}".format(
+            if mid and stem.endswith("/"):
+                context["gurobi_rtd_stable_url"] = stem + "stable/"
+            else:
+                # Might not be versioned. Don't render the banner.
+                logger.info("Unexpected value: url={} version={}".format(
                     context["gurobi_rtd_canonical_url"],
                     context["gurobi_rtd_version"],
                 ))
-            context["gurobi_rtd_stable_url"] = stem + "stable/"
+                logger.info("gurobi_rtd_version reset to 'stable'")
+                context["gurobi_rtd_stable_url"] = context["gurobi_rtd_canonical_url"]
+                context["gurobi_rtd_version"] = "stable"
 
         # URL for the issues page of the source repo.
         git_clone_url = os.environ.get("READTHEDOCS_GIT_CLONE_URL")
