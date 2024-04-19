@@ -41,6 +41,18 @@ readthedocs](https://docs.readthedocs.io/en/stable/reference/environment-variabl
 and theme options specified in `theme.conf`. Check `setup_context` in
 `__init__.py` for details.
 
+**Note that** the 'stable' equivalent version of Gurobi is hard-coded in the
+`page.html` template. This needs to be updated when we release a new branch (and
+all docs branches should be rebuilt with the new configuration). I can't figure
+out a better way yet, as the typical methods don't work:
+
+1. Readthedocs has version warning banners implemented in the new 'beta addons',
+   but enabling these cause myriad other problems for us (e.g. subprojects are
+   broken).
+2. `sphinx-version-warning` is unmaintained. It also relies on querying the RTD
+   API for the latest equivalent stable version, which seems to only work if all
+   the infrastructure is public.
+
 ## Development
 
 A handy trick when working on the theme is to install in editable mode and use
