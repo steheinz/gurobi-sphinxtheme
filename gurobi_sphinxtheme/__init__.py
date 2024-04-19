@@ -6,6 +6,51 @@ here = pathlib.Path(__file__).parent
 
 
 def setup_context(app, pagename, templatename, context, doctree):
+    """
+    Configures jinja variables based on readthedocs environment variables. If
+    they are not set, no version warning banner is shown.
+
+    A build on readthedocs will have the following jinja variables available:
+
+      gurobi_rtd = "true"
+      gurobi_rtd_version = # version tag: 10.0, 11.0, stable, latest
+      gurobi_rtd_version_type = # "branch" for deployments, "external" for PRs
+      gurobi_rtd_canonical_url = # the root url of the deployment
+      gurobi_rtd_stable_url = # root url of the stable deployment
+      gurobi_gh_issue_url = # url to open a github issue for this repo
+
+      pagename = # current page (defined by sphinx)
+      theme_version_warning = "true" # can be set to 'false' in html_theme_options
+      theme_feedback_banner = "true" # can be set to 'false' in html_theme_options
+
+    With these jinja variables, the URL of the current page in an RTD deployment
+    should be:
+
+      {{ gurobi_rtd_canonical_url }}{{ pagename }}.html
+
+    and the same page on the stable branch (i.e. for redirect links) should be:
+
+      {{ gurobi_rtd_stable_url }}{{ pagename }}.html
+
+    A basic testing setup for the stable branch is:
+
+      export READTHEDOCS="True"
+      export READTHEDOCS_VERSION_TYPE="branch"
+      export READTHEDOCS_GIT_CLONE_URL="git@github.com:Gurobi/repo.git"
+      export READTHEDOCS_VERSION="stable"
+      export READTHEDOCS_CANONICAL_URL="./stable/"
+
+    To display the "old version" warning set:
+
+      export READTHEDOCS_VERSION="10.0"
+      export READTHEDOCS_CANONICAL_URL="./10.0/"
+
+    To display the "in development" warning set:
+
+      export READTHEDOCS_VERSION="latest"
+      export READTHEDOCS_CANONICAL_URL="./latest/"
+    """
+
     if os.environ.get("READTHEDOCS") == "True":
 
         # Version and url information. Store these in distinct jinja variables
@@ -42,8 +87,10 @@ def setup_context(app, pagename, templatename, context, doctree):
 
 
 def update_config(app):
-    # Set options for furo, without theme users having to do it themselves.
-    # See https://chrisholdgraf.com/blog/2022/sphinx-update-config/
+    """
+    Sets options for furo, without theme users having to do it themselves.
+    See https://chrisholdgraf.com/blog/2022/sphinx-update-config/
+    """
     app.builder.theme_options.update({
         "light_css_variables": {
             "color-brand-primary": "#DD2113",
