@@ -18,3 +18,7 @@ h4 {
   color: gray;
   box-shadow: none;
 }
+
+.search__outer__input {
+  color: black;
+}
