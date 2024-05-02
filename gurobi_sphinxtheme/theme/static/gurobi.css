@@ -22,3 +22,7 @@ h4 {
 .search__outer__input {
   color: black;
 }
+
+.sidebar-logo {
+  max-width: 80%;
+}

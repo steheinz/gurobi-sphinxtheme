@@ -102,11 +102,15 @@ def update_config(app):
     app.builder.theme_options.update({
         "light_css_variables": {
             "color-brand-primary": "#DD2113",
-            "color-brand-content": "#1675a9",
+            "color-brand-content": "#1675A9",
+            "color-topic-title": "#1675A9",
+            "color-topic-title-background": "#1675A933",
+            "color-admonition-title--important": "#1675A9",
+            "color-admonition-title-background--important": "#1675A933",
         },
         "dark_css_variables": {
-            "color-brand-primary": "#DD2113",
-            "color-brand-content": "#1675a9",
+            "color-brand-primary": "#DC4747",
+            "color-brand-content": "#5A9BD5",
         },
         "sidebar_hide_name": True,
         "light_logo": "gurobi_light.svg",
