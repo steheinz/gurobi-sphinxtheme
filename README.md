@@ -23,8 +23,8 @@ html_theme = "gurobi_sphinxtheme"
 html_favicon = "https://www.gurobi.com/favicon.ico"
 ```
 
-We also have a `dev` branch for development which should only be used
-private documentation branch to allow reviewing the theme changes.
+We also have a `dev` branch for development which should only be used by
+private documentation branches to allow us to review theme changes.
 
 ## Styling
 
@@ -59,11 +59,11 @@ out a better way yet, as the typical methods don't work:
 ## Development
 
 We have a `dev` branch which is used to develop the theme further. This
-branch should be used on any Gurobi documentation for the latest version
-which is private. That allows to review theme change before we merge them
-into the `main` branch which is used for all public Gurobi documentation
-using this theme. To used the branch for a documentation you need to do the
-following:
+branch should be used only on any Gurobi documentation for the latest
+version which is private and not publicly visible. That allows to review
+theme changes before we merge them into the `main` branch which is used for
+public Gurobi documentation. To used the `dev` branch for a documentation
+you need to do the following:
 
 `requirements.txt`:
 
