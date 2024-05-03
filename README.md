@@ -2,8 +2,8 @@
 
 ## Usage
 
-The docs repos that use this theme install from the main branch, so only the
-following is needed:
+The docs repos that use this theme install from the `main` branch, so only
+the following is needed:
 
 `requirements.txt`:
 
@@ -22,6 +22,9 @@ html_title = "<title to appear in browser tabs>"
 html_theme = "gurobi_sphinxtheme"
 html_favicon = "https://www.gurobi.com/favicon.ico"
 ```
+
+We also have a `dev` branch for development which should only be used
+private documentation branch to allow reviewing the theme changes.
 
 ## Styling
 
@@ -54,6 +57,19 @@ out a better way yet, as the typical methods don't work:
    the infrastructure is public.
 
 ## Development
+
+We have a `dev` branch which is used to develop the theme further. This
+branch should be used on any Gurobi documentation for the latest version
+which is private. That allows to review theme change before we merge them
+into the `main` branch which is used for all public Gurobi documentation
+using this theme. To used the branch for a documentation you need to do the
+following:
+
+`requirements.txt`:
+
+```
+gurobi-sphinxtheme @ git+https://github.com/Gurobi/gurobi-sphinxtheme.git@dev
+```
 
 A handy trick when working on the theme is to install in editable mode and use
 `livehtml` on one of the docs repos to auto reload. This requires full rebuilds
