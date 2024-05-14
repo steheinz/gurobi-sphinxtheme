@@ -25,6 +25,7 @@ def setup_context(app, pagename, templatename, context, doctree):
       pagename = # current page (defined by sphinx)
       theme_version_warning = "true" # can be set to 'false' in html_theme_options
       theme_feedback_banner = "true" # can be set to 'false' in html_theme_options
+      theme_construction_warning = "true" # can be set to 'false' in html_theme_options
 
     With these jinja variables, the URL of the current page in an RTD deployment
     should be:
