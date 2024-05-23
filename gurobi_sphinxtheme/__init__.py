@@ -16,10 +16,10 @@ def setup_context(app, pagename, templatename, context, doctree):
     A build on readthedocs will have the following jinja variables available:
 
       gurobi_rtd = "true"
-      gurobi_rtd_version = # version tag: 10.0, 11.0, stable, latest
+      gurobi_rtd_version = # version tag: 10.0, 11.0, current, latest
       gurobi_rtd_version_type = # "branch" for deployments, "external" for PRs
       gurobi_rtd_canonical_url = # the root url of the deployment
-      gurobi_rtd_stable_url = # root url of the stable deployment
+      gurobi_rtd_current_url = # root url of the current deployment
       gurobi_gh_issue_url = # url to open a github issue for this repo
 
       pagename = # current page (defined by sphinx)
@@ -32,17 +32,17 @@ def setup_context(app, pagename, templatename, context, doctree):
 
       {{ gurobi_rtd_canonical_url }}{{ pagename }}.html
 
-    and the same page on the stable branch (i.e. for redirect links) should be:
+    and the same page on the current branch (i.e. for redirect links) should be:
 
-      {{ gurobi_rtd_stable_url }}{{ pagename }}.html
+      {{ gurobi_rtd_current_url }}{{ pagename }}.html
 
-    A basic testing setup for the stable branch is:
+    A basic testing setup for the current branch is:
 
       export READTHEDOCS="True"
       export READTHEDOCS_VERSION_TYPE="branch"
       export READTHEDOCS_GIT_CLONE_URL="git@github.com:Gurobi/repo.git"
-      export READTHEDOCS_VERSION="stable"
-      export READTHEDOCS_CANONICAL_URL="./stable/"
+      export READTHEDOCS_VERSION="current"
+      export READTHEDOCS_CANONICAL_URL="./current/"
 
     To display the "old version" warning set:
 
@@ -67,22 +67,22 @@ def setup_context(app, pagename, templatename, context, doctree):
         )
 
         # For branch (i.e. not pull request) builds, get the canonical URL of
-        # the stable version.
+        # the current version.
         if context["gurobi_rtd_version_type"] == "branch":
             stem, mid, _ = context["gurobi_rtd_canonical_url"].rpartition(
                 context["gurobi_rtd_version"]
             )
             if mid and stem.endswith("/"):
-                context["gurobi_rtd_stable_url"] = stem + "stable/"
+                context["gurobi_rtd_current_url"] = stem + "current/"
             else:
                 # Might not be versioned. Don't render the banner.
                 logger.info("Unexpected value: url={} version={}".format(
                     context["gurobi_rtd_canonical_url"],
                     context["gurobi_rtd_version"],
                 ))
-                logger.info("gurobi_rtd_version reset to 'stable'")
-                context["gurobi_rtd_stable_url"] = context["gurobi_rtd_canonical_url"]
-                context["gurobi_rtd_version"] = "stable"
+                logger.info("gurobi_rtd_version reset to 'current'")
+                context["gurobi_rtd_current_url"] = context["gurobi_rtd_canonical_url"]
+                context["gurobi_rtd_version"] = "current"
 
         # URL for the issues page of the source repo.
         git_clone_url = os.environ.get("READTHEDOCS_GIT_CLONE_URL")
