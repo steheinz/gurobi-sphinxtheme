@@ -41,85 +41,92 @@ for the official documentation of Gurobi.  Got feedback? Take a
 <!-- Add help and feedback footer -->
 {% if theme_feedback_banner == "true" %}
 <aside class="topic">
-    <p class="topic-title">Help and Feedback</p>
-    <div class="table-wrapper docutils container">
-        <table class="epilog docutils align-default">
-            <tbody>
-                <tr class="row-odd">
-
-                    <td>
-                        <p>
-                            <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-search"
-                                viewBox="0 0 16 16" aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z">
-                                </path>
-                            </svg>
-                            <!-- showSearchModal() triggers the readthedocs-sphinx-search popup -->
-                            Press <kbd>/</kbd> or click to<a class="reference external"
-                                href="javascript:showSearchModal()">
-                                search this documentation</a>
-                        </p>
-                    </td>
-                    <td>
-                        <p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-person"
-                                viewBox="0 0 16 16" aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z">
-                                </path>
-                            </svg> <a class="reference external"
-                                href="https://support.gurobi.com/hc/requests/new?ticket_form_id=360000523752&tf_subject=Documentation+issue&tf_360009525951=doc_issue&tf_24952793658385={{ gurobi_rtd_canonical_url }}{{ pagename }}.html">Contact
-                                support</a>
-                            if the content doesn't look right</p>
-                    </td>
-                </tr>
-                <tr class="row-even">
-                    <td>
-                        <p><svg version="1.1" width="1.0em" height="1.0em"
-                                class="sd-octicon sd-octicon-comment-discussion" viewBox="0 0 16 16" aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M1.5 2.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v5.5a.25.25 0 01-.25.25h-3.5a.75.75 0 00-.53.22L3.5 11.44V9.25a.75.75 0 00-.75-.75h-1a.25.25 0 01-.25-.25v-5.5zM1.75 1A1.75 1.75 0 000 2.75v5.5C0 9.216.784 10 1.75 10H2v1.543a1.457 1.457 0 002.487 1.03L7.061 10h3.189A1.75 1.75 0 0012 8.25v-5.5A1.75 1.75 0 0010.25 1h-8.5zM14.5 4.75a.25.25 0 00-.25-.25h-.5a.75.75 0 110-1.5h.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0114.25 12H14v1.543a1.457 1.457 0 01-2.487 1.03L9.22 12.28a.75.75 0 111.06-1.06l2.22 2.22v-2.19a.75.75 0 01.75-.75h1a.25.25 0 00.25-.25v-5.5z">
-                                </path>
-                            </svg> <a class="reference external"
-                                href="https://support.gurobi.com/hc/en-us/community/topics">Gurobi community forum</a>
-                            has plenty more resources</p>
-                    </td>
-                    <td>
-                        <p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-mark-github"
-                                viewBox="0 0 16 16" aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
-                                </path>
-                            </svg> <a class="reference external"
-                                href="{{ gurobi_gh_issue_url }}">Open
-                                a GH issue</a>
-                            if you found a bug (only for Gurobi Tech)</p>
-                    </td>
-                </tr>
-                <tr class="row-odd">
-                    <td>
-                        <p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-book"
-                                viewBox="0 0 16 16" aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm8.755 3a2.25 2.25 0 012.25-2.25H14.5v9h-3.757c-.71 0-1.4.201-1.992.572l.004-7.322zm-1.504 7.324l.004-5.073-.002-2.253A2.25 2.25 0 005.003 2.5H1.5v9h3.757a3.75 3.75 0 011.994.574z">
-                                </path>
-                            </svg> Go to <a class="reference external" href="https://docs.gurobi.com">other Gurobi
-                                documentation</a></p>
-                    </td>
-                    <td>
-                      <p>
-                        <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-home"
-                             viewBox="0 0 16 16" aria-hidden="true">
-                          <path fill-rule="evenodd"
-                                d="M8.156 1.835a.25.25 0 00-.312 0l-5.25 4.2a.25.25 0 00-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 01.75-.75h3.5a.75.75 0 01.75.75v5.25h2.75a.25.25 0 00.25-.25V6.23a.25.25 0 00-.094-.195l-5.25-4.2zM6.906.664a1.75 1.75 0 012.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0113.25 15h-3.5a.75.75 0 01-.75-.75V9H7v5.25a.75.75 0 01-.75.75h-3.5A1.75 1.75 0 011 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2h-.001z">
-                          </path>
-                        </svg> <a class="reference external" href="https://www.gurobi.com/">Gurobi website</a>
-                      </p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+  <p class="topic-title">Help and Feedback</p>
+  <div class="table-wrapper docutils container">
+    <table class="epilog docutils align-default">
+      <tbody>
+        <tr class="row-odd">
+          <td>
+            <p>
+              <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-search"
+                   viewBox="0 0 16 16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z">
+                </path>
+              </svg>
+              <!-- showSearchModal() triggers the readthedocs-sphinx-search popup -->
+              Press <kbd>/</kbd> or click to<a class="reference external"
+                                               href="javascript:showSearchModal()">
+                search this documentation</a>
+            </p>
+          </td>
+          <td>
+            <p>
+              <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-person"
+                   viewBox="0 0 16 16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z">
+                </path>
+              </svg> <a class="reference external"
+                        href="https://support.gurobi.com/hc/requests/new?ticket_form_id=360000523752&tf_subject=Documentation+issue&tf_360009525951=doc_issue&tf_24952793658385={{ gurobi_rtd_canonical_url }}{{ pagename }}.html">Contact
+                support</a>
+              if the content doesn't look right
+            </p>
+          </td>
+        </tr>
+        <tr class="row-even">
+          <td>
+            <p>
+              <svg version="1.1" width="1.0em" height="1.0em"
+                    class="sd-octicon sd-octicon-comment-discussion" viewBox="0 0 16 16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M1.5 2.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v5.5a.25.25 0 01-.25.25h-3.5a.75.75 0 00-.53.22L3.5 11.44V9.25a.75.75 0 00-.75-.75h-1a.25.25 0 01-.25-.25v-5.5zM1.75 1A1.75 1.75 0 000 2.75v5.5C0 9.216.784 10 1.75 10H2v1.543a1.457 1.457 0 002.487 1.03L7.061 10h3.189A1.75 1.75 0 0012 8.25v-5.5A1.75 1.75 0 0010.25 1h-8.5zM14.5 4.75a.25.25 0 00-.25-.25h-.5a.75.75 0 110-1.5h.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0114.25 12H14v1.543a1.457 1.457 0 01-2.487 1.03L9.22 12.28a.75.75 0 111.06-1.06l2.22 2.22v-2.19a.75.75 0 01.75-.75h1a.25.25 0 00.25-.25v-5.5z">
+                </path>
+              </svg> <a class="reference external"
+                        href="https://support.gurobi.com/hc/en-us/community/topics">Gurobi community forum</a>
+              has plenty more resources
+            </p>
+          </td>
+          <td>
+            <p>
+              <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-mark-github"
+                   viewBox="0 0 16 16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                </path>
+              </svg> <a class="reference external"
+                        href="{{ gurobi_gh_issue_url }}">Open
+                a GH issue</a>
+              if you found a bug (only for Gurobi Tech)
+            </p>
+          </td>
+        </tr>
+        <tr class="row-odd">
+          <td>
+            <p>
+              <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-book"
+                   viewBox="0 0 16 16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm8.755 3a2.25 2.25 0 012.25-2.25H14.5v9h-3.757c-.71 0-1.4.201-1.992.572l.004-7.322zm-1.504 7.324l.004-5.073-.002-2.253A2.25 2.25 0 005.003 2.5H1.5v9h3.757a3.75 3.75 0 011.994.574z">
+                </path>
+              </svg> Go to <a class="reference external" href="https://docs.gurobi.com">other Gurobi
+                documentation</a>
+            </p>
+          </td>
+          <td>
+            <p>
+              <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-home"
+                   viewBox="0 0 16 16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M8.156 1.835a.25.25 0 00-.312 0l-5.25 4.2a.25.25 0 00-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 01.75-.75h3.5a.75.75 0 01.75.75v5.25h2.75a.25.25 0 00.25-.25V6.23a.25.25 0 00-.094-.195l-5.25-4.2zM6.906.664a1.75 1.75 0 012.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0113.25 15h-3.5a.75.75 0 01-.75-.75V9H7v5.25a.75.75 0 01-.75.75h-3.5A1.75 1.75 0 011 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2h-.001z">
+                </path>
+              </svg> <a class="reference external" href="https://www.gurobi.com/">Gurobi website</a>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </aside>
 {% endif %}
 
