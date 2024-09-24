@@ -2,8 +2,10 @@
 
 {% block content %}
 
-<!-- Under-construction header (to be removed in future) -->
-{% if theme_construction_warning == "true" %}
+<!-- Under-construction header (to be removed in future)
+ For the 12.0 beta this content is included in the beta release banner.
+ -->
+{% if theme_construction_warning == "true" and not gurobi_rtd_version == "12.0" %}
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This documentation site is still in beta. Please visit
@@ -18,9 +20,21 @@ for the official documentation of Gurobi.  Got feedback? Take a
   {% if gurobi_rtd_version == "latest" %}
     <div class="admonition warning">
         <p class="admonition-title">Warning</p>
-        <p>This document is for the development version of Gurobi. Please see the
-        <a class="reference external" href="{{ gurobi_rtd_current_url }}{{ pagename }}.html">current version</a>
+        <p>You are reading the documentation for the development version of Gurobi. Please see
+        <a class="reference external" href="{{ gurobi_rtd_current_url }}{{ pagename }}.html">version 11.0</a>
         for the public documentation.
+        </p>
+    </div>
+  {% elif gurobi_rtd_version == "12.0" %}
+    <div class="admonition warning">
+        <p class="admonition-title">Warning</p>
+        <p>You are reading the documentation for the beta release of Gurobi version
+        {{ gurobi_rtd_version }}. Please see
+        <a class="reference external" href="{{ gurobi_rtd_current_url }}{{ pagename }}.html">version 11.0</a>
+        for documentation of the current Gurobi release.</p>
+
+        <p>This is our new documentation site. Got feedback? Take a
+        <a class="reference external" href="https://www.surveymonkey.com/r/HL5ZJZ5">one minute survey</a>!
         </p>
     </div>
   {% elif not (gurobi_rtd_version == "current" or gurobi_rtd_version == "current" or gurobi_rtd_version == "11.0") %}
@@ -29,14 +43,16 @@ for the official documentation of Gurobi.  Got feedback? Take a
         <p>You are reading the documentation for Gurobi version {{ gurobi_rtd_version }},
         an older release. Please see
         <a class="reference external" href="{{ gurobi_rtd_current_url }}{{ pagename }}.html">version 11.0</a>
-        for documentation of the latest Gurobi release.
+        for documentation of the current Gurobi release.
         </p>
     </div>
   {% endif %}
 {% endif %}
 
 <!-- Write the page content -->
+<article role="main">
 {{ super() }}
+</article>
 
 <!-- Add help and feedback footer -->
 {% if theme_feedback_banner == "true" %}
