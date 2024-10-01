@@ -7,7 +7,7 @@ name = "gurobi_sphinxtheme"
 version = "1.0.0"
 description = "Gurobi Sphinx theme"
 readme = "README.md"
-dependencies = ["furo == 2024.1.29"]
+dependencies = ["furo == 2024.8.6"]
 
 [project.entry-points."sphinx.html_themes"]
 gurobi_sphinxtheme = "gurobi_sphinxtheme"
